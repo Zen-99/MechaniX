@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View, ScrollView,Image,FlatList,Dimensions } from 'react-native'
+import { StyleSheet, Text, View, ScrollView,Image,FlatList,Dimensions,TouchableOpacity } from 'react-native'
 import React from 'react'
-
+import { useNavigation } from '@react-navigation/native'; 
 // import { Icon } from 'react-native-element' 
 import { Icon, ScreenHeight } from '@rneui/base'
 import { colors,parameters } from '../globals/styles'
@@ -13,17 +13,20 @@ import { mapStyle } from '../globals/mapStyle'
 
 // import { createDrawerNavigator } from '@react-navigation/drawer';
 
+
+
 const SCREEN_WIDTH=Dimensions.get('window').width
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <View style={styles.icon1}>
+        <TouchableOpacity style={styles.icon1} onPress={() => navigation.openDrawer()}>
             <Icon type="material-community"
             name="menu"
             color={colors.white}
             size={40}/>
-        </View>
+        </TouchableOpacity>
       </View>
       <ScrollView bounces={false}>
         <View style={styles.home}>

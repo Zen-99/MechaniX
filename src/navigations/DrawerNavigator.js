@@ -1,14 +1,17 @@
 
 import React from 'react';
+import { StyleSheet, Text, View, ScrollView,Image,FlatList,Dimensions,TouchableOpacity } from 'react-native';
+import { colors,parameters } from '../globals/styles'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import  HomeStack  from './StackNavigator';
 import {Icon} from 'react-native-elements';
-import {colors} from "../globals/styles";
+
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigator(){
     return(
+        
         <Drawer.Navigator>
              <Drawer.Screen 
                  name = "HomeStack"
@@ -27,5 +30,15 @@ export default function DrawerNavigator(){
                 
              />
         </Drawer.Navigator>
+        
     )
 } 
+const styles = StyleSheet.create({
+    header:{
+        backgroundColor:colors.blue,
+        height:parameters.headerHeight,
+        alignItems:"flex-start",
+        justifyContent:"center"
+       
+      },
+})
