@@ -1,10 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { colors,parameters } from '../globals/styles'
 import { ScreenHeight } from '@rneui/base'
 import { StatusBar } from 'expo-status-bar'
+import { useNavigation } from '@react-navigation/native'; 
+
 
 const WelcomeScreen = () => {
+  const navigation=useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -13,12 +16,12 @@ const WelcomeScreen = () => {
       </View>
       <View style={styles.belowContainer}>
       <View style={styles.belowPart}>
-        <View style={styles.button2}>
+        <TouchableOpacity style={styles.button2} onPress={()=>navigation.navigate('Login')}>
           <Text style={styles.button2Text}>Log in</Text>
-        </View> 
-        <View style={styles.button1}>
+        </TouchableOpacity> 
+        <TouchableOpacity style={styles.button1} onPress={()=>navigation.navigate('SignupForm')}>
           <Text style={styles.button1Text}>Sign up</Text>
-        </View> 
+        </TouchableOpacity> 
       </View>
 
 

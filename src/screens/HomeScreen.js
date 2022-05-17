@@ -40,22 +40,10 @@ const HomeScreen = () => {
                 </View>
             </View>
         </View>
-        <View>
-              <FlatList numRows={4}
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}
-                data={filterData}
-                keyExtractor={(item)=>item.id}
-                renderItem={({item})=>(
-                  <View style={styles.card}>
-                    <View style={styles.view2}>
-                      <Image style={styles.image2} source={item.image}/>
-                    </View>
-                    <View><Text style={styles.title}>{item.name}</Text></View>
-                  </View>
-                )}
-              />
-            </View>
+        <View style={styles.functions}>
+            <TouchableOpacity style={styles.button1} onPress={()=>{navigation.navigate("BroadcastRequests")}}><Text style={styles.button1Text}>BroadCast Requests</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.button1}><Text style={styles.button1Text}>Troubles Nearby</Text></TouchableOpacity>
+        </View>
             <View>
               <Text style={styles.text4}>Routing</Text>
             </View>
@@ -123,13 +111,15 @@ const styles = StyleSheet.create({
     
     home:{
      backgroundColor:colors.blue,
+     height:200,
      paddingLeft:20,
      
     },
     
     text1:{
      color:colors.white,
-     fontSize:21,
+     fontSize:30,
+     fontFamily:'Roboto',
      paddingBottom:20,
      paddingTop:20
     },
@@ -147,10 +137,10 @@ const styles = StyleSheet.create({
     },
     
     button1:{
-      height:40,
-      width:200,
+      height:70,
+      width:150,
       backgroundColor:colors.black,
-      borderRadius:20,
+      borderRadius:10,
       alignItems:"center",
       justifyContent:"center",
       marginTop:20,
@@ -239,8 +229,9 @@ const styles = StyleSheet.create({
     map:{
        
       height: ScreenHeight*3/5,
-     marginVertical: 0,
-     width:SCREEN_WIDTH*0.92
+      marginVertical: 0,
+      width:SCREEN_WIDTH*0.92,
+      borderRadius:20
     },
     
     text4:{ fontSize:30, 
@@ -279,10 +270,23 @@ const styles = StyleSheet.create({
     backgroundColor:"white"
     },
     mapStyle:{
+      borderRadius:30,
       backgroundColor:"grey",
       // alignItems:"center",
       alignSelf:"center",
       width:SCREEN_WIDTH*0.92,
-      height: ScreenHeight*3/5
+      height: ScreenHeight*1.7/5
+    },
+    functions:{
+      display:'flex',
+      flexDirection:'row',
+      alignItems:'center',
+      justifyContent:'space-between',
+      marginTop:30,
+      alignSelf:"center",
+      width:SCREEN_WIDTH*0.92,
+      height:ScreenHeight*0.6/5,
+      // backgroundColor:'yellow',
+      marginBottom:20
     }
 })

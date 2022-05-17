@@ -17,15 +17,15 @@ const Login = () => {
             <TextInput style={styles.textInput}
 
             label="User name"
-            left={<TextInput.Icon name="face" />}
+            left={<TextInput.Icon name="account" />}
             />
             <TextInput style={styles.textInput}
             label="Id no"
-            left={<TextInput.Icon name="face" />}
+            left={<TextInput.Icon name="plus" />}
             />
             <TextInput style={styles.textInput}
             label="Mobile No"
-            left={<TextInput.Icon name="face" />}
+            left={<TextInput.Icon name="plus" />}
             />
 
             <TextInput style={styles.textInput}
